@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+
+    <title>Guess My Number Game!</title>
+    <meta charset='utf-8'>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src='script.js' defer></script>
+
+</head>
+
+<body>
+
+    <h1>Guess My Number Game! p1 Project</h1>
+
+    <div id='app'>
+        <p>Try and guess my number. It's a whole number between 0 and 10.</p>
+        <input type="text" id="userGuess" value="0">
+        <input type="button" id="gameButton" onClick="gameFunction()" value="Guess">
+        <p id="answerText">Good luck!</p>
+        <p id="userAttempts">Your guesses: </p>
+    </div>
+
+</body>
+
+</html>
