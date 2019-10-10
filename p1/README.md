@@ -2,7 +2,7 @@
 
 # Project 1
 + By: Alex Fernandez
-+ Production URL: <http://alexfern.me/>
++ Production URL: <http://p1.alexfern.me/>
 
 ## Outside resources
 *your list of outside resources go here*
