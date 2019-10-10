@@ -5,14 +5,13 @@ var answers = document.getElementById("userAttempts")
 
 function gameFunction() {
     var x = document.getElementById("userGuess").value;
-    console.log(computerGuess);
 
     if (x == computerGuess) {
         console.log("You got it.");
         document.getElementById("answerText").innerHTML = "You got it! The number was " + computerGuess;
     }
     else {
-        console.log("Keep trying");
+        console.log("Keep trying - you are almost there");
         answers.textContent += x + ", ";
         if (x < computerGuess) {
             document.getElementById("answerText").innerHTML = "Keep trying! Guess higher :)";

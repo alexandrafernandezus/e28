@@ -1,8 +1,25 @@
 let app = new Vue({
     el: '#app',
     data: {
-        'playerName': 'Alex',
-        'guess': null,
-        'guesses': []
+        playerName: 'James',
+        guess: null,
+        guesses: [],
+        results: null,
+        settings: {
+            max: 200,
+            type: 'numeric',
+            guessLimit: 15
+        },
+        answer: 55,
+        guessesDetailed: [
+            { guess: 15, result: 'low' },
+            { guess: 60, result: 'high' },
+            { guess: 50, result: 'low' },
+        ]
+    },
+    methods: {
+        submitGuess() {
+            this.guesses.push(this.guess);
+        },
     }
 });

@@ -5,7 +5,7 @@
     <title>Intro</title>
     <meta charset='utf-8'>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
     <script src='script.js' defer></script>
 
     <style>
@@ -13,29 +13,34 @@
             display: none;
         }
     </style>
-
 </head>
 
 <body>
-
-    <h1>Intro</h1>
+    <h1>Outro ;)</h1>
 
     <div id='app' v-cloak>
         <div>
-            <label>What's your name? <input type='text' v-model='playerName'></label>
-            <p v-if='playerName != null'>Player: {{ playerName }}</p>
+            <label>What’s your name? <input type='text' v-model='playerName'></label>
+            <p v-if='playerName'>Player: {{ playerName }}</p>
+            <p v-else>Enter your player name to begin the game.</p>
         </div>
 
-        <div>
-            <label>What's your guess? <input type='text' v-model='guess'></label>
-            <button v-on:click='guesses.push(guess)'>Guess</button>
-
+        <div v-if='playerName'>
+            <label>What’s your guess? <input type='text' v-model.number='guess' v-on:keyup.enter='submitGuess'></label>
+            <button v-on:click='submitGuess'>Guess</button>
             <ul>
                 <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
             </ul>
-            <p>{{ guesses }}</p>
-
         </div>
+
+        <!-- 
+        <ul>
+            <li v-for='(setting, property) in settings'>{{ property }} : {{ setting }}</li>
+        </ul>
+        <ul>
+            <li v-for='thisGuess in guessesDetailed'>{{ thisGuess.guess }} was too {{ thisGuess.result }}</li>
+        </ul> 
+        -->
 
     </div>
 

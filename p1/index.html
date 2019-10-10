@@ -2,25 +2,60 @@
 <html lang='en'>
 
 <head>
-
-    <title>Guess My Number Game!</title>
+    <title>Project 1</title>
     <meta charset='utf-8'>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
     <script src='script.js' defer></script>
 
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .feedback {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Guess My Number!</h1>
 
-    <h1>Guess My Number Game! p1 Project</h1>
+    <div id='app' v-cloak>
+        <div>
+            <label>What’s your name, you challenger, you? <input type='text' v-model='playerName'></label>
+            <p v-if='playerName'>Player: {{ playerName }}</p>
+            <p v-else>Enter your name to begin.</p>
+        </div>
 
-    <div id='app'>
-        <p>Try and guess my number. It's a whole number between 0 and 10.</p>
-        <input type="text" id="userGuess" value="0">
-        <input type="button" id="gameButton" onClick="gameFunction()" value="Guess">
-        <p id="answerText">Good luck!</p>
-        <p id="userAttempts">Your guesses: </p>
+
+        <div v-if='playerName'>
+            <h2><u>Instructions</u></h2>
+            <p>Try and guess my number. It's a whole number between 1 and 10.</p>
+            <label><input type='number' v-if='textHide' v-model.number.lazy.trim='guess'
+                    v-on:keyup.enter='submitGuess'></label>
+            <button id='guessButton' v-if='buttonHide' v-on:click='submitGuess'>Guess</button>
+            <p>Number of guesses left: {{ counter }}</p>
+        </div>
+
+        <div class='feedback' v-bind:class='{ error : !correct }'>{{ feedback }}</div>
+
+        <div v-if='guess'>
+            <p>Your guesses:</p>
+            <ul>
+                <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
+            </ul>
+        </div>
+
+        <div v-if='gameOver'>
+            <p><b>Do you want to play again?</b></p>
+            <button id='play' v-on:click='playAgain'>Yes</button>
+        </div>
     </div>
 
 </body>
