@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <title>Project 2</title>
+    <meta charset='utf-8'>
+
+    <script src='js/script.js' defer></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+
+            .error {
+                color: red;
+            }
+
+            .feedback {
+                font-weight: bold;
+            }
+    </style>
+</head>
+
+<body>
+
+    <h1>Guess My Number - I Have Components, Isn't That Cool (p2)!</h1>
+
+    <div id='app' v-cloak>
+
+        <div>
+            <label>What’s your name, you challenger, you? <input type='text' v-model='playerName'></label>
+            <p v-if='playerName'>Player: {{ playerName }}</p>
+            <p v-else>Enter your name to begin.</p>
+        </div>
+
+
+        <div v-if='playerName'>
+            <h2><u>Instructions</u></h2>
+            <p>Try and guess my number. It's a whole number between 1 and 10.</p>
+            <label><input type='number' v-if='textHide' v-model.number.lazy.trim='guess'
+                    v-on:keyup.enter='submitGuess'></label>
+            <button id='guessButton' v-if='buttonHide' v-on:click='submitGuess'>Guess</button>
+            <p>Number of guesses left: {{ counter }}</p>
+        </div>
+
+        <div class='feedback' v-bind:class="{ error : !correct }">{{ feedback }}</div>
+
+        <div v-if='gameOver'>
+            <p><b>Do you want to play again?</b></p>
+            <button id='play' v-on:click='playAgain'>Yes</button>
+        </div>
+
+        <p>Your guesses:</p>
+        <round-detail v-for='round in rounds' v-on:delete-round='deleteRound($event)' v-bind:number='round.number'
+            v-bind:answer='round.answer' v-bind:key='round.number'>
+        </round-detail>
+
+    </div>
+
+</body>
+
+</html>
