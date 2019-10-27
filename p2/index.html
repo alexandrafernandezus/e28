@@ -10,20 +10,21 @@
     <style>
         [v-cloak] {
             display: none;
+        }
 
-            .error {
-                color: red;
-            }
+        .error {
+            color: red;
+        }
 
-            .feedback {
-                font-weight: bold;
-            }
+        .feedback {
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Guess My Number - I Have Components, Isn't That Cool (p2)!</h1>
+    <h1>Guess My Number 2.0 - I Have Components!</h1>
 
     <div id='app' v-cloak>
 
@@ -36,8 +37,9 @@
 
         <div v-if='playerName'>
             <h2><u>Instructions</u></h2>
-            <p>Try and guess my number. It's a whole number between 1 and 10.</p>
-            <label><input type='number' v-if='textHide' v-model.number.lazy.trim='guess'
+            <p>Please try and guess my number. It is a whole number between 1 and 10.</p>
+            <label>
+                <input type='number' v-if='textHide' v-model.number.lazy.trim='guess'
                     v-on:keyup.enter='submitGuess'></label>
             <button id='guessButton' v-if='buttonHide' v-on:click='submitGuess'>Guess</button>
             <p>Number of guesses left: {{ counter }}</p>
@@ -50,10 +52,10 @@
             <button id='play' v-on:click='playAgain'>Yes</button>
         </div>
 
-        <p>Your guesses:</p>
-        <round-detail v-for='round in rounds' v-on:delete-round='deleteRound($event)' v-bind:number='round.number'
+        <p v-if='playerName'><u>Your guesses, in components:</u></p>
+        <guesses-detail v-for='round in rounds' v-on:delete-round='deleteRound($event)' v-bind:number='round.number'
             v-bind:answer='round.answer' v-bind:key='round.number'>
-        </round-detail>
+        </guesses-detail>
 
     </div>
 

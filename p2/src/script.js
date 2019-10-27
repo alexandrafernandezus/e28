@@ -1,17 +1,17 @@
 import Vue from 'vue';
-import RoundDetail from './components/RoundDetail.vue';
+import GuessesDetail from './components/GuessesDetail.vue';
 
 // root Vue instance
 let app = new Vue({
     el: '#app',
     components: {
-        'round-detail' : RoundDetail
+        'guesses-detail': GuessesDetail
     },
     data: {
         playerName: null,
         computerGuess: Math.floor(Math.random() * (+11 - +1)) + +1,
         guess: null,
-        guesses: [],
+        guesses: [2, 3],
         counter: 3,
         feedback: '',
         correct: false,
@@ -21,6 +21,7 @@ let app = new Vue({
         rounds: [],
         round: 1,
         answer: '',
+        showGuess: false,
     },
     methods: {
         submitGuess() {
@@ -74,7 +75,10 @@ let app = new Vue({
                 return round.number != this;
             }
             this.rounds = this.rounds.filter(isMatchingRound, roundNumber);
-        }
+        },
+        showGuesses() {
+            this.showGuess = true;
+        },
     }
 });
 

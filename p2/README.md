@@ -1,9 +1,12 @@
-
-
-# Project 1
+# Project 2
 + By: Alex Fernandez
-+ Production URL: <http://p1.alexfern.me/>
++ Production URL: <http://p2.alexfern.me>
+
+## Build strategy
+
++ [X] Integrated
++ [ ] Comprehensive
 
 ## Outside resources
-https://www.geeksforgeeks.org/javascript-math-random-function/
-https://scotch.io/courses/getting-started-with-vuejs/vue-events-build-a-counter
+https://vegibit.com/vuejs-parent-child-communication/
+https://jsfiddle.net/mani04/4kyzkgLu/
