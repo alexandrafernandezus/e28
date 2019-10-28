@@ -11,7 +11,7 @@ let app = new Vue({
         playerName: null,
         computerGuess: Math.floor(Math.random() * (+11 - +1)) + +1,
         guess: null,
-        guesses: [2, 3],
+        guesses: [],
         counter: 3,
         feedback: '',
         correct: false,
