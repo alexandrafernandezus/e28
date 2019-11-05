@@ -1,17 +1,45 @@
 <template>
-  <div id="app">
-    <img id="logo" alt="ZipFoods logo" src="./assets/images/zipfoods-logo.png" />
-    <p>ZipFoods is your one-stop-shop for convenient online grocery shopping in the greater Boston area.</p>
+  <div id='app'>
+    <img id='logo' alt='ZipFoods logo' src='./assets/images/zipfoods-logo.png' />
+
+    <nav>
+      <ul>
+        <li v-for='link in links' :key='link'>
+          <a href='#' v-on:click='page = link'>{{ link }}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <component :is='linkComponents[page]'></component>
   </div>
 </template>
 
 <script>
+import ShowProducts from './components/ShowProducts.vue';
+import ShowHome from './components/ShowHome.vue';
+import ShowCategories from './components/ShowCategories.vue';
+import { products } from './products.js';
+
 export default {
-  name: "app",
-  components: {}
+  name: 'app',
+  components: { ShowProducts, ShowHome, ShowCategories },
+  data: function() {
+    return {
+      /* Default page to start with */
+      page: 'home',
+      /* Store links in an array to maintain order */
+      links: ['home', 'products', 'categories'],
+      linkComponents: {
+        home: 'ShowHome',
+        products: 'ShowProducts',
+        categories: 'ShowCategories'
+      },
+      products: products
+    };
+  }
 };
 </script>
 
 <style lang='scss'>
-@import "./assets/css/zipfoods.scss";
+@import './assets/css/zipfoods.scss';
 </style>
