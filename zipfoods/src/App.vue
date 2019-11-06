@@ -5,36 +5,30 @@
     <nav>
       <ul>
         <li v-for='link in links' :key='link'>
-          <a href='#' v-on:click='page = link'>{{ link }}</a>
+          <router-link exact :to='paths[link]'>{{ link }}</router-link>
         </li>
       </ul>
     </nav>
 
-    <component :is='linkComponents[page]'></component>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ShowProducts from './components/ShowProducts.vue';
-import ShowHome from './components/ShowHome.vue';
-import ShowCategories from './components/ShowCategories.vue';
 import { products } from './products.js';
 
 export default {
   name: 'app',
-  components: { ShowProducts, ShowHome, ShowCategories },
+  components: {},
   data: function() {
     return {
-      /* Default page to start with */
-      page: 'home',
-      /* Store links in an array to maintain order */
+      products: products,
       links: ['home', 'products', 'categories'],
-      linkComponents: {
-        home: 'ShowHome',
-        products: 'ShowProducts',
-        categories: 'ShowCategories'
-      },
-      products: products
+      paths: {
+        home: '/',
+        products: '/products',
+        categories: '/categories'
+      }
     };
   }
 };
