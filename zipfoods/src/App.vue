@@ -1,11 +1,17 @@
 <template>
-  <div id='app'>
-    <img id='logo' alt='ZipFoods logo' src='./assets/images/zipfoods-logo.png' />
+  <div id="app">
+    <img id="logo" alt="ZipFoods logo" src="./assets/images/zipfoods-logo.png" />
 
     <nav>
       <ul>
-        <li v-for='link in links' :key='link'>
-          <router-link exact :to='paths[link]'>{{ link }}</router-link>
+        <li>
+          <router-link :to="{ name: 'home' }" exact>home</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'products' }">products</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'categories'}">categories</router-link>
         </li>
       </ul>
     </nav>
@@ -15,25 +21,19 @@
 </template>
 
 <script>
-import { products } from './products.js';
+import { products } from "./products.js";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {},
   data: function() {
     return {
-      products: products,
-      links: ['home', 'products', 'categories'],
-      paths: {
-        home: '/',
-        products: '/products',
-        categories: '/categories'
-      }
+      products: products
     };
   }
 };
 </script>
 
 <style lang='scss'>
-@import './assets/css/zipfoods.scss';
+@import "./assets/css/zipfoods.scss";
 </style>
