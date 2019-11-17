@@ -1,17 +1,14 @@
 <template>
-  <div id="app">
-    <img id="logo" alt="ZipFoods logo" src="./assets/images/zipfoods-logo.png" />
+  <div id='app'>
+    <img id='logo' alt='ZipFoods logo' src='./assets/images/zipfoods-logo.png' />
 
     <nav>
       <ul>
-        <li>
-          <router-link :to="{ name: 'home' }" exact>home</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'products' }">products</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'categories'}">categories</router-link>
+        <li v-for='link in links' :key='link'>
+          <router-link exact :to='{ name: link }'>
+            {{ link }}
+            <span v-if='link == "cart"'>({{ sharedState.cartCount }})</span>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -21,19 +18,27 @@
 </template>
 
 <script>
-import { products } from "./products.js";
+import * as app from './app.js';
+import { products } from './products.js';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {},
   data: function() {
     return {
-      products: products
+      products: products,
+      links: ['home', 'products', 'categories', 'cart'],
+      cartCount: null,
+      sharedState: app.store
     };
+  },
+  mounted() {
+    this.cart = new app.Cart();
+    app.store.cartCount = this.cart.count();
   }
 };
 </script>
 
 <style lang='scss'>
-@import "./assets/css/zipfoods.scss";
+@import './assets/css/zipfoods.scss';
 </style>

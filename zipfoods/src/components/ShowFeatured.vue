@@ -1,18 +1,18 @@
 <template>
-  <div id='featured'>
+  <div id="featured">
     <h2>Featured Products</h2>
-    <ul class='cleanList'>
-      <li v-for='product in featuredProducts' :key='product.id'>{{ product.name }}</li>
+    <ul class="cleanList">
+      <li v-for="product in featuredProducts" :key="product.id">{{ product.name }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import { products } from './../products.js';
+import { products } from "./../products.js";
 
 export default {
-  name: 'ShowFeatured',
-  props: ['category'],
+  name: "ShowFeatured",
+  props: ["category"],
   computed: {
     featuredProducts: function() {
       function isMatch(product) {

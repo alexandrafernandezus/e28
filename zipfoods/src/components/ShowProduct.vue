@@ -1,13 +1,13 @@
 <template>
   <div class="product">
+    <router-link :to="{ name: 'product', params: {'id' : product.id }}">
     <div class="product-name">{{ product.name }}</div>
     <img
       class='product-thumb'
       v-bind:alt='"Product image of " + product.name'
       v-bind:src='"./../assets/images/products/" + product.id + ".jpg"'
     />
-    <p class="product-description">{{ product.description }}</p>
-    <div class="product-price">${{ product.price }}</div>
+    </router-link>
   </div>
 </template>
 
