@@ -6,16 +6,21 @@
 </template>
 
 <script>
-import RecipeIndividual from './RecipeIndividual.vue';
-import {recipes} from './../recipes.js'
+import RecipeIndividual from './../RecipeIndividual.vue';
+import * as app from './../../app.js';
 
 export default {
-  name: 'RecipesList',
+  name: 'RecipesPage',
   components: { RecipeIndividual },
   data: function() {
     return {
-      recipes: recipes
+      recipes: null
     };
+  },
+  mounted(){
+    app.axios.get(app.config.api + 'recipes').then(response => {
+        this.recipes = response.data;
+    });
   }
 };
 </script>

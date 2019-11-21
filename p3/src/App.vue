@@ -1,25 +1,33 @@
 <template>
-  <div id='app'>
-    <img alt='Vue logo' src='./assets/logo.png' />
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.jpg" />
 
-    <featured-recipe></featured-recipe>
-    <recipes-list></recipes-list>
-     
+    <nav>
+      <ul>
+        <li v-for="link in links" :key="link">
+          <router-link :to="{ name: link }" exact>{{ link }}</router-link>
+        </li>
+      </ul>
+    </nav>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RecipesList from './components/RecipesList.vue';
-import { recipes } from './recipes.js';
-import FeaturedRecipe from './components/FeaturedRecipe.vue';
+import * as app from './app.js';
 
 export default {
   name: 'app',
-  components: { RecipesList, FeaturedRecipe },
+  components: {},
   data: function() {
     return {
-      recipes: recipes
+      links: ['home', 'recipes', 'grains', 'shopping list'],
+        sharedState: app.store
     };
+  },
+  mounted() {
+
   }
 };
 </script>

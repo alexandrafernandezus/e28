@@ -1,6 +1,6 @@
 <template>
   <div id='featured'>
-    <h2>Featured Recipes</h2>
+    <h2>Featured Recipe</h2>
     <ul>
       <li v-for='recipe in featuredList' :key='recipe.id'>{{ recipe.name }}</li>
     </ul>
@@ -12,6 +12,7 @@ import { recipes } from './../recipes.js';
 
 export default {
   name: 'FeaturedRecipe',
+  props: ['category'],
   computed: {
     featuredList: function() {
       function isMatch(recipe) {
@@ -22,7 +23,6 @@ export default {
   },
   data: function() {
     return {
-      category: 'sweet',
       recipes: recipes
     };
   }

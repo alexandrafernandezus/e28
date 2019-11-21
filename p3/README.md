@@ -1,24 +1,21 @@
-# p3
+# Project 3
 
-## Project setup
-```
-npm install
-```
+- By: Alex Fernandez
+- Production URL: <http://p3.alexfern.me>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Outline of features
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The app features:
++3 whole grain recipes
++A page listing the grains included in the recipes
++A shopping list option - add the ingredients from a recipe to your shopping list
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Outside resources
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- https://thestayathomechef.com/brownie-recipe/
+- https://savorthebest.com/kamut-flour-tortillas/
+- https://thebakermama.com/recipes/healthy-flourless-fresh-apple-bread/
+
+## Notes for instructor
+
+I really enjoyed working on this project. I was not able to figure out how to iterate on the shopping list ingredients array because of the way it's structured in local storage (so it looks a little odd on the shopping list page, but the ingredients are there). This course is a stretch for me and I am learning a lot. Thank you!
