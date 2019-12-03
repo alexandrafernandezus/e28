@@ -6,9 +6,9 @@
 ## Outline of features
 
 The app features:
-+3 whole grain recipes
-+A page listing the grains included in the recipes
-+A shopping list option - add the ingredients from a recipe to your shopping list
+- 3 whole grain recipes
+- A page listing the grains included in the recipes
+- A shopping list option - add the ingredients from a recipe to your shopping list
 
 ## Outside resources
 
