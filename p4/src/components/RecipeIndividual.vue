@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-link :to='{ name: "recipe", params: {"id": recipe.id, "name": recipe.name}}'>
+      <router-link data-test='recipe-link' :to='{ name: "recipe", params: {"id": recipe.id, "name": recipe.name}}'>
     <div>{{ recipe.name }}</div>
     <img :alt='"Image of " + recipe.name' :src='"./../assets/images/" + recipe.id + ".jpg"' />
       </router-link>
