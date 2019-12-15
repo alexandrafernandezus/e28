@@ -5,7 +5,7 @@
       <div>
         <div>
           <label for='fname'>first name</label>
-          <input type='text' v-model='$v.name.$model' />
+          <input data-test='first-name' type='text' v-model='$v.name.$model' />
 
           <div v-if='$v.name.$error'>
             <div class='form-feedback-error' v-if='!$v.name.required'>First name is required.</div>
@@ -19,7 +19,7 @@
 
         <div>
           <label for='email'>e-mail address</label>
-          <input type='text' v-model='$v.email.$model' />
+          <input data-test='email-address' type='text' v-model='$v.email.$model' />
 
           <div v-if='$v.email.$error'>
             <div class='form-feedback-error' v-if='!$v.email.required'>Email is required.</div>
