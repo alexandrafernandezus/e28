@@ -5,9 +5,9 @@
 
 ## Improvements based on P3 peer review feedback
 
-+Updated shopping list to add all ingredients in seperate lines/bullets
-+Added image to Home page for the Recipe of the Day
-+Added links to different pages throughout the site
+- Updated shopping list to add all ingredients in seperate lines/bullets
+- Added image to Home page for the Recipe of the Day
+- Added links to different pages throughout the site
 
 ## Outside resources
 
