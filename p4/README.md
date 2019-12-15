@@ -1,14 +1,13 @@
 # Project 3
 
 - By: Alex Fernandez
-- Production URL: <http://p3.alexfern.me>
+- Production URL: <http://p4.alexfern.me>
 
-## Outline of features
+## Improvements based on P3 peer review feedback
 
-The app features:
-+3 whole grain recipes
-+A page listing the grains included in the recipes
-+A shopping list option - add the ingredients from a recipe to your shopping list
++Updated shopping list to add all ingredients in seperate lines/bullets
++Added image to Home page for the Recipe of the Day
++Added some links to different pages throughout the site
 
 ## Outside resources
 
@@ -17,5 +16,3 @@ The app features:
 - https://thebakermama.com/recipes/healthy-flourless-fresh-apple-bread/
 
 ## Notes for instructor
-
-I really enjoyed working on this project. I was not able to figure out how to iterate on the shopping list ingredients array because of the way it's structured in local storage (so it looks a little odd on the shopping list page, but the ingredients are there). This course is a stretch for me and I am learning a lot. Thank you!
