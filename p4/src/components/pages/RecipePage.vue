@@ -1,6 +1,6 @@
 <template>
     <div v-if='recipe'>
-        <h1>{{ recipe.name }}</h1>
+        <h1 data-test='individual-name'>{{ recipe.name }}</h1>
         <img
             v-if='recipe.id'
             :alt='"Product image of  " + recipe.name'
@@ -10,7 +10,7 @@
 
         <h2> Ingredients </h2>
         <li v-for='ingredients in recipe.ingredients' :key='ingredients'>{{ ingredients }}</li>
-        <button @click='addToList(recipe.id)'>Add to shopping list</button>
+        <button data-test='add-to-list-button' @click='addToList(recipe.id)'>Add to shopping list</button>
         <div v-if='shoppingAlert'>Shopping list updated.</div>
 
         <br>

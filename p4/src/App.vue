@@ -22,7 +22,7 @@ export default {
   components: {},
   data: function() {
     return {
-      links: ['home', 'recipes', 'grains', 'shopping list'],
+      links: ['home', 'recipes', 'grains', 'shopping list', 'account'],
         sharedState: app.store
     };
   },

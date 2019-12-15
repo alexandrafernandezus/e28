@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>Welcome to the Whole Grain Guide!</p>
+    <h1>Welcome to the Whole Grain Guide!</h1>
+    <p>We offer recipes for baked goods made with fresh-ground whole grains. Check out the grains we use <router-link to='/categories'>here</router-link>.</p>
+
 
     <featured-recipe :category='featuredCategory'></featured-recipe>
   </div>

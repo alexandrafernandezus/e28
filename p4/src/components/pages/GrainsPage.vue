@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h2>Grains</h2>
-    <p>We believe that whole grains are the best grains. Below are the grains we cook with.</p>
+    <h1>Grains</h1>
+    <p>We believe that whole grains are the best grains. Here are the grains we cook with:</p>
     <ul>
       <li v-for='(category, id) in categories' :key='id'>{{ category }}</li>
     </ul>
+    <p>Check out some of our <router-link to='/recipes'>recipes</router-link>!</p>
   </div>
 </template>
 

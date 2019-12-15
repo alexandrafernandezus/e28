@@ -6,10 +6,12 @@ import RecipesPage from './components/pages/RecipesPage.vue';
 import RecipePage from './components/pages/RecipePage.vue';
 import GrainsPage from './components/pages/GrainsPage.vue';
 import ListPage from './components/pages/ListPage.vue';
-
+import AccountPage from './components/pages/AccountPage.vue'
+import Vuelidate from 'vuelidate';
 import store from './store/'
 
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 
 const routes = [
@@ -18,6 +20,7 @@ const routes = [
   { path: '/recipe/:id', component: RecipePage, name: 'recipe', props: true },
   { path: '/categories', component: GrainsPage, name: 'grains' },
   { path: '/list', component: ListPage, name: 'shopping list' },
+  { path: '/account', component: AccountPage, name: 'account' },
 ];
 
 const router = new VueRouter({

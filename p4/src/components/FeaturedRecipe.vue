@@ -1,10 +1,18 @@
 <template>
   <div id='featured'>
-    <h2>Featured Recipe</h2>
+    <h2>Recipe of the Day</h2>
     <ul>
-      <li v-for='recipe in featuredList' :key='recipe.id'>{{ recipe.name }}</li>
-    </ul>
+      <li v-for='recipe in featuredList' :key='recipe.id'><h3>{{ recipe.name }}</h3>
+          <img
+            v-if='recipe.id'
+            :alt='"Product image of  " + recipe.name'
+            :src='"./../assets/images/" + recipe.id + ".jpg"'
+        />
+      </li>
+
+      </ul>
   </div>
+
 </template>
 
 <script>
